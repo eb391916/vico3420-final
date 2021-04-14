@@ -34,5 +34,6 @@ function draw() {
   volhistory.pushState(vol);
 
   ellipse(100,100,200,vol*200);
+  fill(255);
   console.log(vol);
 }
