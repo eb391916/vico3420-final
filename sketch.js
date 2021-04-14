@@ -31,9 +31,15 @@ function draw() {
   background(0);
 
   var vol = amp.getLevel();
-  volhistory.pushState(vol);
+  volhistory.push(vol);
+  
+  stroke(255);
 
-  ellipse(100,100,200,vol*200);
-  fill(255);
-  console.log(vol);
+  for (var i = 0; i < volhistory.length; i++) {
+    var y = map(volhistory[i],0,1,height,0);
+    point(i,volhistory);
+  }
+
+  //ellipse(100,100,200,vol*200);
+  //fill(255);
 }
