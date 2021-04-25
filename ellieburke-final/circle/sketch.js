@@ -13,15 +13,15 @@ function toggleSong() {
 }
 
 function preload() {
-    song = loadSound('assets/MirrorMind-BobbyRichards.mp3');
+    song = loadSound('MirrorMind-BobbyRichards.mp3');
 }
 
 function setup() {
-  createCanvas(200,200);
+  createCanvas(windowWidth,windowHeight);
   angleMode(DEGREES);
 
-  button = createButton('Play/Pause')
-  button.mousePressed(toggleSong);
+  //button = createButton('Play/Pause')
+  //button.mousePressed(toggleSong);
   
   amp = new p5.Amplitude();
 
@@ -55,10 +55,8 @@ function draw() {
   if (volhistory.length > 360) {
     volhistory.splice(0,1);
   }
-  
-  //stroke(0,255,0);
-  //line(volhistory.length, 0, volhistory.length, height);
+}
 
-  //ellipse(100,100,200,vol*200);
-  //fill(255);
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }

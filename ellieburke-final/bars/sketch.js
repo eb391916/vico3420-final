@@ -14,15 +14,15 @@ function toggleSong() {
 }
 
 function preload() {
-    song = loadSound('assets/Muriel-BobbyRichards.mp3');
+    song = loadSound('Muriel-BobbyRichards.mp3');
 }
 
 function setup() {
-  createCanvas(256,256);
+  createCanvas(windowWidth,windowHeight);
   colorMode(HSB);
 
-  button = createButton('Play/Pause')
-  button.mousePressed(toggleSong);
+  //button = createButton('Stop/Restart')
+  //button.mousePressed(toggleSong);
 
   song.play();
   
@@ -46,7 +46,8 @@ function draw() {
   
   stroke(255);
   noFill();
+}
 
- 
-  
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }

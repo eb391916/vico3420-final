@@ -17,10 +17,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(200,200);
+  createCanvas(windowWidth,windowHeight);
 
-  button = createButton('Play/Pause')
-  button.mousePressed(toggleSong);
+  //button = createButton('Stop/Restart')
+  //button.mousePressed(toggleSong);
   
   amp = new p5.Amplitude();
 
@@ -51,7 +51,8 @@ function draw() {
   
   stroke(0,255,0);
   line(volhistory.length, 0, volhistory.length, height);
+}
 
-  //ellipse(100,100,200,vol*200);
-  //fill(255);
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
